@@ -148,6 +148,7 @@ function setup()
 function commitchange()
 {
 	begin "Commit the changes"
+	sed -i "s#https://github.com/ibm/charts#https://$PAT@github.com/ibm/charts#g" .git/config
 	git branch
 	git checkout $MASTER_BRANCH 
 	git fetch
