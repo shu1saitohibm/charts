@@ -149,10 +149,10 @@ function commitchange()
 {
 	begin "Commit the changes"
 	git branch
-	git checkout travis
+	git checkout $MASTER_BRANCH 
 	git fetch
 	git stage repo/$repodir/
-	git commit -m"[skip ci] - Master branch update with index" && git push origin travis || info "No changes to push" # TODO, no changes will also appear if push fails, need to fix
+	git commit -m"[skip ci] - Master branch update with index" && git push origin $MASTER_BRANCH || info "No changes to push" # TODO, no changes will also appear if push fails, need to fix
 	end
 }
 
