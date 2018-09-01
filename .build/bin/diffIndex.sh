@@ -149,7 +149,7 @@ function commitchange()
 {
 	begin "Commit the changes"
 cat .git/config
-	sed -i "s#https://github.com/ibm/charts#https://$PAT@github.com/ibm/charts#g" .git/config
+	sed -i "s#https://github.com/IBM/charts#https://$PAT@github.com/IBM/charts#g" .git/config
 cat .git/config
 	git branch
 	git checkout $MASTER_BRANCH 
